@@ -7,7 +7,7 @@
 # - read 32-bit audio samples from the left channel of an I2S microphone
 # - snip upper 16-bits from each 32-bit microphone sample
 # - write 16-bit samples to a SD card file using WAV format
-"
+#
 #
 # Hardware tested:
 # - INMP441 microphone module 

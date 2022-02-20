@@ -22,7 +22,7 @@ from machine import SDCard
 from machine import I2S
 
 #======= USER CONFIGURATION =======
-RECORD_TIME_IN_SECONDS = 2
+RECORD_TIME_IN_SECONDS = 5
 SAMPLE_RATE_IN_HZ = 22050
 #======= USER CONFIGURATION =======
 
@@ -90,11 +90,10 @@ audio_in = I2S(
 # See [docs](https://docs.micropython.org/en/latest/library/machine.SDCard.html#esp32) for
 # recommended pins depending on the chosen slot.
 #   slot=2 configures SD card to use the SPI3 controller (VSPI), DMA channel = 2
-#   slot=3 configures SD card to use the SPI2 controller (HSPI), DMA channel = 1
-
+#   slot=3 configures SD card to use the SPI2 controller (HSPI), DMA channel = 1 
 sd = SDCard(slot=2, sck=Pin(18), mosi=Pin(23), miso=Pin(19), cs=Pin(5))
 uos.mount(sd, "/sd")
-wav = open('/sd/'+'dupa.wav','wb')
+wav = open('/sd/'+'.wav','wb')
 
 # create header for WAV file and write to SD card
 wav_header = create_wav_header(
